@@ -1,10 +1,20 @@
-# OogyControllerManager
+<p align="center">
+<img width="300" src="https://oogycanyouhelp.com/Store%20Desc%20Inline%20606px.png">
+</p>
 
+<h1 align="center">OogyControllerManager</h1>
+
+<p align="center">
 🎮 ⌨️ Typescript Gamepad and Keyboard handler consolidated into a tiny, easy-to-use JS module
+</p>
 
 ## About
 
 Built and used in production for [Oogy: Can You Help](https://oogycanyouhelp.com), an indie deckbuilding adventure on Steam (PC and Mac).
+
+The goal of this project is to provide a useful abstraction over both the [Web Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API) and window-level [KeyboardEvents](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent).
+
+Why? In this case, as a video game, we want to handle keyboard and controller input with consistency—particularly in special cases such as pause menu input, "on controller disconnected", and Steam Overlay handling.
 
 ## Installation
 
@@ -22,7 +32,10 @@ npm install -s oogy-controller-manager
 
 
 /**
- * Represents an "event listener", primarily used to remove that listener when moving to a different screen. Has an automatically generated UUID, as well as a `deactivated` property, so may be helpful in order to detect if a current listener exists in a more complex context.
+ * Represents an "event listener", primarily used to remove that listener 
+ when moving to a different screen. Has an automatically generated UUID, 
+ as well as a `deactivated` property, so may be helpful in order to detect 
+ if a current listener exists in a more complex context.
 */
 currentControllerListener: OogyControllerListener;
 
@@ -31,7 +44,8 @@ controllerManager: OogyControllerManager;
 constructor() {
   this.controllerManager = new OogyControllerManager({
     onControllerDisconnected: () => {
-      this.handleUserPausedGame(); // if the controller is disconnected, simulate pause event
+      this.handleUserPausedGame(); 
+      // if the controller is disconnected, simulate pause event
     }
   });
 
@@ -41,11 +55,13 @@ constructor() {
     // do the same with right clicking as pressing pause button, globally
     onRightClick: () => {
       this.handleUserPausedGameToggled();
-      // not same as `handleUserPausedGame`, as disconnect ALWAYS pauses, this can UNPAUSE as well
+      // not same as `handleUserPausedGame`, as disconnect ALWAYS pauses, 
+      // this can UNPAUSE as well
     }
   });
 
-  // right click event firing can be disabled using the manager-level property:
+  // click event firing can be disabled using the manager-level property:
+  // (this is what I use when the Steam Overlay is activated as well)
   // this.controllerManager.shouldStopAcceptingClicks = true;
 }
 ```
@@ -60,7 +76,8 @@ startUserInteraction(): void {
   // until eventually, we press A to select a card
 
   this.cardIndex = 0;
-  this.cards = [{}, {}, {}]; // example UI elements, most likely, that we are navigating with keyboard or controller
+  this.cards = [{}, {}, {}]; // example UI elements, most likely, 
+  // that we are navigating with keyboard or controller
 
   this.currentControllerListener = this.controllerManager.addListener({
     onControllerInput: (input) => {
@@ -76,7 +93,8 @@ startUserInteraction(): void {
           return;
         case OogyControllerInput.start:
           this.handleUserPausedGameToggled();
-          // here is our 3rd catch for pausing, and why this library can be helpful instead of doing this all by hand
+          // here is our 3rd catch for pausing, 
+          // and why this library can be helpful instead of doing this all by hand
           break;
         case OogyControllerInput.a:
           this.handleUserSelectedCard(this.cardIndex);
@@ -102,7 +120,8 @@ startUserInteraction(): void {
 stopUserInteraction(): void {
   this.controllerManager.removeListener(
     this.currentControllerListener
-  ); // since each listener has an automagically generated UUID, this is all we need to do
+  ); // this is all we need to do 
+  // (each listener has an automagically generated UUID)
 }
 ```
 
@@ -129,8 +148,8 @@ startNavigationBarBlockingListener(): void {
       ) {
 
         if (this.userPausedGame === true) {
-          // start is "active" so block anything else from receiving this input
-          // until start pressed again
+          // start is "active" so block anything else from receiving this
+          // input until start pressed again
           this.handleInputWhileGamePaused(input);
           return true;
         }
@@ -139,7 +158,8 @@ startNavigationBarBlockingListener(): void {
       }
 
       this.handleUserPausedGameToggled();
-      return true; // return `true` to intercept, this is the guide or pause button
+      return true; 
+      // return `true` to intercept, this is the guide or pause button
     }
 
   });
