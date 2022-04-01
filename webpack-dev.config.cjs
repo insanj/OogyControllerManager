@@ -1,24 +1,32 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/OogyControllerManager.ts",
+  entry: {
+    oogycontrollermanager: "./src/index.ts",
+  },
+  target: "web",
   mode: "development",
   devtool: "inline-source-map",
+  watch: true,
   module: {
     rules: [
       {
         test: /\.ts$/,
-        loader: "esbuild-loader",
+        use: [
+          {
+            loader: "esbuild-loader",
+            options: {
+              loader: "ts",
+              target: "es2021",
+            },
+          },
+        ],
         exclude: /node_modules/,
-        options: {
-          loader: "ts",
-          target: "es2021",
-        },
       },
     ],
   },
   resolve: {
-    extensions: [".ts"],
+    extensions: [".ts", ".js"],
   },
   output: {
     filename: "oogy_controller_manager.js",
