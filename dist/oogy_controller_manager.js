@@ -308,7 +308,7 @@ class OogyControllerManager {
       }).then(() => {
         (0,_OogyLog__WEBPACK_IMPORTED_MODULE_1__.oogyLog)("Successfully vibrated controller");
       }).catch((e) => {
-        (0,_OogyLog__WEBPACK_IMPORTED_MODULE_1__.oogyErrorLog)("Unable to virbate controller", event, e);
+        (0,_OogyLog__WEBPACK_IMPORTED_MODULE_1__.oogyErrorLog)("Unable to vibrate controller", event, e);
       });
     }
     const buttonsToIgnoreInitially = eventGamepad.buttons.map((b, i) => {

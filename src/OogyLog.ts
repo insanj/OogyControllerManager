@@ -61,13 +61,8 @@ oogyWarnLog = (msg, ...args) => {
 
 // } else {
 //     oogyLog = () => { };
-//     oogyNavigationLog = () => { };
 //     oogyErrorLog = () => { };
 //     oogyWarnLog = () => { };
-//     oogyPreloadLog = () => { };
-//     oogySaveLog = () => { };
-//     oogySequencerLog = () => { };
-//     oogyGreenworksLog = () => { };
 // }
 
 export { kOogyIsDebug, oogyLog, oogyErrorLog, oogyWarnLog };

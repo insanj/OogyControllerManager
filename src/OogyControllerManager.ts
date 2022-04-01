@@ -18,26 +18,28 @@ export class OogyControllerManager {
   globalRightClickListener?: OogyNullable<OogyControllerRightClickListener>;
 
   listeners: Record<string, OogyControllerListener>;
+
   gamepads: Record<string, OogyControllerGamepad>;
 
-  // internal
-  keyboardAbortController?: AbortController;
-  gamepadConnectedAbortController?: AbortController;
-  gamepadDisconnectedAbortController?: AbortController;
-
   shouldStopAcceptingClicks: boolean = false;
+
+  // internal properties
+
+  private keyboardAbortController?: AbortController;
+  private gamepadConnectedAbortController?: AbortController;
+  private gamepadDisconnectedAbortController?: AbortController;
 
   /**
    * setInterval used to clear the scheduled block
    */
-  gamepadPollInterval?: any;
+  private gamepadPollInterval?: any;
 
   /**
    * Millisecond number value that defines how often we check for gamepad input (should be rather low)
    */
-  gamepadPoolIntervalDelay: number;
+  private gamepadPoolIntervalDelay: number;
 
-  model: OogyControllerManagerModel;
+  private model: OogyControllerManagerModel;
 
   constructor(model: OogyControllerManagerModel) {
     this.listeners = {};
@@ -279,7 +281,7 @@ export class OogyControllerManager {
           oogyLog("Successfully vibrated controller");
         })
         .catch((e: any) => {
-          oogyErrorLog("Unable to virbate controller", event, e);
+          oogyErrorLog("Unable to vibrate controller", event, e);
         });
     }
 
@@ -487,7 +489,7 @@ export class OogyControllerManager {
 
       // save most up to date gamepad and state, both of which most likely
       // just changed (gamepad is new object every event fire based on HTML5,
-      // and then stateis new object based on if we sent event to receiver/listener yet)
+      // and then state is new object based on if we sent event to receiver/listener yet)
       oogyGamepad.state = newGamepadState;
       this.gamepads[oogyGamepadToFind.gamepad.id] = oogyGamepad;
     }
