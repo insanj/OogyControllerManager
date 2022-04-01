@@ -3,9 +3,10 @@
 </p>
 
 <h1 align="center">OogyControllerManager</h1>
+<h3 align="center"><code>oogy-controller-manager</code></h3>
 
 <p align="center">
-🎮 ⌨️ Typescript Gamepad and Keyboard handler consolidated into a tiny, easy-to-use JS module
+🎮 ⌨️  Typescript Gamepad and Keyboard handler consolidated into a tiny, easy-to-use npm package
 </p>
 
 <h2>About</h2>
