@@ -19,6 +19,12 @@ Why? In this case, as a video game, we want to handle keyboard and controller in
 
 <h2>Installation</h2>
 
+In browser, use:
+
+```html
+<script src="oogy_controller_manager.js"></script>
+```
+
 Once published, should be as simple as:
 
 ```bash
@@ -40,7 +46,7 @@ npm install
 npm start
 ```
 
-This will generate the latest production-ready `.js` file using webpack, located at `dist/OogyControllerManager.js`.
+This will generate the latest production-ready `.js` file using webpack, located at `dist/oogy_controller_manager.js`.
 
 To build with inline sourcemaps, use the `npm run dev` command. See `package.json` for details.
 

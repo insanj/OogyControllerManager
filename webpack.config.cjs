@@ -20,7 +20,7 @@ module.exports = {
     extensions: [".ts"],
   },
   output: {
-    filename: "OogyControllerManager.js",
+    filename: "oogy_controller_manager.js",
     path: path.resolve(__dirname, "dist"),
   },
 };

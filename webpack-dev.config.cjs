@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./OogyControllerManager.ts",
+  entry: "./src/OogyControllerManager.ts",
   mode: "development",
   devtool: "inline-source-map",
   module: {
@@ -21,7 +21,7 @@ module.exports = {
     extensions: [".ts"],
   },
   output: {
-    filename: "OogyControllerManager.js",
-    path: path.resolve(__dirname, "../dist"),
+    filename: "oogy_controller_manager.js",
+    path: path.resolve(__dirname, "dist"),
   },
 };
