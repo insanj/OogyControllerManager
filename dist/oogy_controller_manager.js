@@ -1,10 +1,28 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
+/***/ (() => {
+
+
+
+/***/ }),
+/* 2 */
+/***/ (() => {
+
+
+
+/***/ }),
+/* 3 */
+/***/ (() => {
+
+
+
+/***/ }),
+/* 4 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "OogyControllerInput": () => (/* binding */ OogyControllerInput)
@@ -23,134 +41,23 @@ var OogyControllerInput = /* @__PURE__ */ ((OogyControllerInput2) => {
 
 
 /***/ }),
-/* 2 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "kOogyIsDebug": () => (/* binding */ kOogyIsDebug),
-/* harmony export */   "oogyErrorLog": () => (/* binding */ oogyErrorLog),
-/* harmony export */   "oogyLog": () => (/* binding */ oogyLog),
-/* harmony export */   "oogyWarnLog": () => (/* binding */ oogyWarnLog)
-/* harmony export */ });
-const kOogyIsDebug = true;
-let oogyLog, oogyErrorLog, oogyWarnLog;
-const kOogyLogFontSize = "8px";
-oogyLog = (msg, ...args) => {
-  try {
-    throw new Error("OogyLogError");
-  } catch (e) {
-    const oogyLogCSS = `font-size: ${kOogyLogFontSize}; color: #9BACF1;`;
-    const callee = e.stack.split("\n")[2].trim();
-    console.log(`%c${msg}
-> ${new Date().toISOString()} ${callee}`, oogyLogCSS, ...args);
-  }
-};
-oogyErrorLog = (msg, ...args) => {
-  try {
-    throw new Error("OogyLogError");
-  } catch (e) {
-    const oogyLogCSS = `font-size: ${kOogyLogFontSize}; color: #fff; background: tomato;`;
-    const callee = e.stack.split("\n")[2].trim();
-    console.error(`%c${msg}
-> ${new Date().toISOString()} ${callee}`, oogyLogCSS, ...args);
-  }
-};
-oogyWarnLog = (msg, ...args) => {
-  try {
-    throw new Error("OogyLogError");
-  } catch (e) {
-    const oogyLogCSS = `font-size: ${kOogyLogFontSize}; color: #fff; background: goldenrod;`;
-    const callee = e.stack.split("\n")[2].trim();
-    console.warn(`%c${msg}
-> ${new Date().toISOString()} ${callee}`, oogyLogCSS, ...args);
-  }
-};
+/* 5 */
+/***/ (() => {
 
 
 
 /***/ }),
-/* 3 */
+/* 6 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "OogyUUIDBuilder": () => (/* binding */ OogyUUIDBuilder)
-/* harmony export */ });
-class OogyUUIDBuilder {
-  static randomUUID() {
-    return window.crypto.randomUUID();
-  }
-}
-
-
-/***/ })
-/******/ 	]);
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "OogyControllerManager": () => (/* binding */ OogyControllerManager)
 /* harmony export */ });
-/* harmony import */ var _OogyControllerInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _OogyLog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _OogyUUIDBuilder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _OogyControllerInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _OogyLog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */ var _OogyUUIDBuilder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
 
 
 
@@ -480,6 +387,223 @@ class OogyControllerManager {
     }
   }
 }
+
+
+/***/ }),
+/* 7 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "kOogyIsDebug": () => (/* binding */ kOogyIsDebug),
+/* harmony export */   "oogyErrorLog": () => (/* binding */ oogyErrorLog),
+/* harmony export */   "oogyLog": () => (/* binding */ oogyLog),
+/* harmony export */   "oogyWarnLog": () => (/* binding */ oogyWarnLog)
+/* harmony export */ });
+const kOogyIsDebug = true;
+let oogyLog, oogyErrorLog, oogyWarnLog;
+const kOogyLogFontSize = "8px";
+oogyLog = (msg, ...args) => {
+  try {
+    throw new Error("OogyLogError");
+  } catch (e) {
+    const oogyLogCSS = `font-size: ${kOogyLogFontSize}; color: #9BACF1;`;
+    const callee = e.stack.split("\n")[2].trim();
+    console.log(`%c${msg}
+> ${new Date().toISOString()} ${callee}`, oogyLogCSS, ...args);
+  }
+};
+oogyErrorLog = (msg, ...args) => {
+  try {
+    throw new Error("OogyLogError");
+  } catch (e) {
+    const oogyLogCSS = `font-size: ${kOogyLogFontSize}; color: #fff; background: tomato;`;
+    const callee = e.stack.split("\n")[2].trim();
+    console.error(`%c${msg}
+> ${new Date().toISOString()} ${callee}`, oogyLogCSS, ...args);
+  }
+};
+oogyWarnLog = (msg, ...args) => {
+  try {
+    throw new Error("OogyLogError");
+  } catch (e) {
+    const oogyLogCSS = `font-size: ${kOogyLogFontSize}; color: #fff; background: goldenrod;`;
+    const callee = e.stack.split("\n")[2].trim();
+    console.warn(`%c${msg}
+> ${new Date().toISOString()} ${callee}`, oogyLogCSS, ...args);
+  }
+};
+
+
+
+/***/ }),
+/* 8 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "OogyUUIDBuilder": () => (/* binding */ OogyUUIDBuilder)
+/* harmony export */ });
+class OogyUUIDBuilder {
+  static randomUUID() {
+    return window.crypto.randomUUID();
+  }
+}
+
+
+/***/ }),
+/* 9 */
+/***/ (() => {
+
+
+
+/***/ }),
+/* 10 */
+/***/ (() => {
+
+
+
+/***/ }),
+/* 11 */
+/***/ (() => {
+
+
+
+/***/ })
+/******/ 	]);
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "OogyControllerInput": () => (/* reexport safe */ _OogyControllerInput__WEBPACK_IMPORTED_MODULE_3__.OogyControllerInput),
+/* harmony export */   "OogyControllerManager": () => (/* reexport safe */ _OogyControllerManager__WEBPACK_IMPORTED_MODULE_5__.OogyControllerManager),
+/* harmony export */   "OogyUUIDBuilder": () => (/* reexport safe */ _OogyUUIDBuilder__WEBPACK_IMPORTED_MODULE_10__.OogyUUIDBuilder),
+/* harmony export */   "kOogyIsDebug": () => (/* reexport safe */ _OogyLog__WEBPACK_IMPORTED_MODULE_8__.kOogyIsDebug),
+/* harmony export */   "oogyErrorLog": () => (/* reexport safe */ _OogyLog__WEBPACK_IMPORTED_MODULE_8__.oogyErrorLog),
+/* harmony export */   "oogyLog": () => (/* reexport safe */ _OogyLog__WEBPACK_IMPORTED_MODULE_8__.oogyLog),
+/* harmony export */   "oogyWarnLog": () => (/* reexport safe */ _OogyLog__WEBPACK_IMPORTED_MODULE_8__.oogyWarnLog)
+/* harmony export */ });
+/* harmony import */ var _OogyControllerBlockingListener__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _OogyControllerBlockingListener__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_OogyControllerBlockingListener__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _OogyControllerBlockingListener__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _OogyControllerBlockingListener__WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+/* harmony import */ var _OogyControllerGamepad__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _OogyControllerGamepad__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_OogyControllerGamepad__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _OogyControllerGamepad__WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _OogyControllerGamepad__WEBPACK_IMPORTED_MODULE_1__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+/* harmony import */ var _OogyControllerGamepadState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _OogyControllerGamepadState__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_OogyControllerGamepadState__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _OogyControllerGamepadState__WEBPACK_IMPORTED_MODULE_2__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _OogyControllerGamepadState__WEBPACK_IMPORTED_MODULE_2__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+/* harmony import */ var _OogyControllerInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _OogyControllerListener__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _OogyControllerListener__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_OogyControllerListener__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _OogyControllerListener__WEBPACK_IMPORTED_MODULE_4__) if(["default","OogyControllerInput"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _OogyControllerListener__WEBPACK_IMPORTED_MODULE_4__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+/* harmony import */ var _OogyControllerManager__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
+/* harmony import */ var _OogyControllerManagerModel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9);
+/* harmony import */ var _OogyControllerManagerModel__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_OogyControllerManagerModel__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _OogyControllerManagerModel__WEBPACK_IMPORTED_MODULE_6__) if(["default","OogyControllerInput","OogyControllerManager"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _OogyControllerManagerModel__WEBPACK_IMPORTED_MODULE_6__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+/* harmony import */ var _OogyControllerRightClickListener__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(10);
+/* harmony import */ var _OogyControllerRightClickListener__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_OogyControllerRightClickListener__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _OogyControllerRightClickListener__WEBPACK_IMPORTED_MODULE_7__) if(["default","OogyControllerInput","OogyControllerManager"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _OogyControllerRightClickListener__WEBPACK_IMPORTED_MODULE_7__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+/* harmony import */ var _OogyLog__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(7);
+/* harmony import */ var _OogyNullable__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(11);
+/* harmony import */ var _OogyNullable__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_OogyNullable__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
+/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _OogyNullable__WEBPACK_IMPORTED_MODULE_9__) if(["default","OogyControllerInput","OogyControllerManager","kOogyIsDebug","oogyErrorLog","oogyLog","oogyWarnLog"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _OogyNullable__WEBPACK_IMPORTED_MODULE_9__[__WEBPACK_IMPORT_KEY__]
+/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
+/* harmony import */ var _OogyUUIDBuilder__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(8);
+
+
+
+
+
+
+
+
+
+
+
 
 })();
 

@@ -7,7 +7,10 @@
 
 <p align="center">
 🎮 ⌨️  Typescript Gamepad and Keyboard handler consolidated into a tiny, easy-to-use npm package
+
 </p>
+
+[View to npm](https://www.npmjs.com/package/oogy-controller-manager)
 
 <h2>About</h2>
 
