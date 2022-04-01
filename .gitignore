@@ -1,5 +1,6 @@
 .DS_Store
 .mjs
-.js
+src/*.js
+src/*.js.map
 
 node_modules/

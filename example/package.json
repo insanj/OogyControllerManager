@@ -10,6 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.3",
-    "oogy-controller-manager": "insanj/oogycontrollermanager"
+    "oogy-controller-manager": "file:../"
   }
 }
