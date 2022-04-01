@@ -10,7 +10,7 @@
 
 </p>
 
-[View to npm](https://www.npmjs.com/package/oogy-controller-manager)
+[Go to npm](https://www.npmjs.com/package/oogy-controller-manager)
 
 <h2>About</h2>
 
