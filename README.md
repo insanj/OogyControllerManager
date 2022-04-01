@@ -8,7 +8,7 @@
 🎮 ⌨️ Typescript Gamepad and Keyboard handler consolidated into a tiny, easy-to-use JS module
 </p>
 
-## About
+<h2>About</h2>
 
 Built and used in production for [Oogy: Can You Help](https://oogycanyouhelp.com), an indie deckbuilding adventure on Steam (PC and Mac).
 
@@ -16,7 +16,7 @@ The goal of this project is to provide a useful abstraction over both the [Web G
 
 Why? In this case, as a video game, we want to handle keyboard and controller input with consistency—particularly in special cases such as pause menu input, "on controller disconnected", and Steam Overlay handling.
 
-## Installation
+<h2>Installation</h2>
 
 Once published, should be as simple as:
 
@@ -24,9 +24,28 @@ Once published, should be as simple as:
 npm install -s oogy-controller-manager
 ```
 
-## Usage
+And using:
 
-### Getting Started
+```
+import { OogyControllerManager } from 'oogy-controller-manager';
+```
+
+<h2>Building</h2>
+
+Clone the repository, and run:
+
+```bash
+npm install
+npm start
+```
+
+This will generate the latest production-ready `.js` file using webpack, located at `dist/OogyControllerManager.js`.
+
+To build with inline sourcemaps, use the `npm run dev` command. See `package.json` for details.
+
+<h2>Usage</h2>
+
+<h3>Getting Started</h3>
 
 ```ts
 
@@ -66,7 +85,7 @@ constructor() {
 }
 ```
 
-### Basic Usage
+<h3>Basic Usage</h3>
 
 ```ts
 startUserInteraction(): void {
@@ -117,7 +136,7 @@ startUserInteraction(): void {
 }
 ```
 
-### Disconnecting
+<h3>Disconnecting</h3>
 
 ```ts
 stopUserInteraction(): void {
@@ -128,7 +147,7 @@ stopUserInteraction(): void {
 }
 ```
 
-### Blocking Listeners
+<h3>Blocking Listeners</h3>
 
 ```ts
 startNavigationBarBlockingListener(): void {
@@ -170,10 +189,11 @@ startNavigationBarBlockingListener(): void {
 
 stopNavigationBarBlockingListener(): void {
   this.controllerManager.removeBlockingListener();
+  // no uuid, so this removes the only blocking listener active
 }
 ```
 
-## Authors
+<h2>Authors</h2>
 
 ```
 Julian (@insanj) Weiss
@@ -182,7 +202,7 @@ github.com/insanj
 (c) 2022
 ```
 
-## License
+<h2>License</h2>
 
 ```
 MIT License

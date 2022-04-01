@@ -1,0 +1,27 @@
+{
+  "name": "oogy-controller-manager",
+  "version": "0.1.0",
+  "description": " 🎮 ⌨️ Typescript Gamepad and Keyboard handler consolidated into a tiny, easy-to-use JS module ",
+  "scripts": {
+    "start": "webpack --config webpack.config.cjs",
+    "dev": "webpack --config webpack-dev.config.cjs"
+  },
+  "files": [
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insanj/OogyControllerManager.git"
+  },
+  "author": "insanj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/insanj/OogyControllerManager/issues"
+  },
+  "homepage": "https://github.com/insanj/OogyControllerManager#readme",
+  "devDependencies": {
+    "esbuild-loader": "^2.18.0",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
