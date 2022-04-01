@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: "./src/OogyControllerManager.ts",
-  mode: "development",
+  mode: "none",
   module: {
     rules: [
       {
