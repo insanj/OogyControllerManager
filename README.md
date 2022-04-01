@@ -198,6 +198,33 @@ stopNavigationBarBlockingListener(): void {
 }
 ```
 
+<h3>Keyboard-Exclusive Listeners</h3>
+
+```ts
+const keyboardBlockingListener = this.controllerManager.addListener({
+  // when showing a virtual keyboard or directly processing
+  // keyboard input, we want to completely intercept keyboard events
+
+  interceptKeyboardInput: (keyboardEvent) => {
+    let keyCode = keyboardEvent.key.toUpperCase();
+    if (keyCode === "CAPSLOCK") {
+      /// ...
+    } else if (keyCode === "ENTER" || keyCode === "ESCAPE") {
+      this.handleEnterToggled();
+      // intercepting keyboard events has the side effect
+      // (in current API) of also disregarding inputs that we may
+      // have been using for navigation, such as ENTER and ESCAPE
+      return;
+    }
+  },
+
+  // we can still accept controller input while doing this
+  onControllerInput: (input) => {
+    // ...
+  },
+});
+```
+
 <h2>Authors</h2>
 
 ```
