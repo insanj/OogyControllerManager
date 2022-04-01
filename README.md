@@ -49,8 +49,6 @@ To build with inline sourcemaps, use the `npm run dev` command. See `package.jso
 <h3>Getting Started</h3>
 
 ```ts
-
-
 /**
  * Represents an "event listener", primarily used to remove that listener
  when moving to a different screen. Has an automatically generated UUID,
