@@ -32,9 +32,9 @@ npm install -s oogy-controller-manager
 
 
 /**
- * Represents an "event listener", primarily used to remove that listener 
- when moving to a different screen. Has an automatically generated UUID, 
- as well as a `deactivated` property, so may be helpful in order to detect 
+ * Represents an "event listener", primarily used to remove that listener
+ when moving to a different screen. Has an automatically generated UUID,
+ as well as a `deactivated` property, so may be helpful in order to detect
  if a current listener exists in a more complex context.
 */
 currentControllerListener: OogyControllerListener;
@@ -44,7 +44,7 @@ controllerManager: OogyControllerManager;
 constructor() {
   this.controllerManager = new OogyControllerManager({
     onControllerDisconnected: () => {
-      this.handleUserPausedGame(); 
+      this.handleUserPausedGame();
       // if the controller is disconnected, simulate pause event
     }
   });
@@ -55,7 +55,7 @@ constructor() {
     // do the same with right clicking as pressing pause button, globally
     onRightClick: () => {
       this.handleUserPausedGameToggled();
-      // not same as `handleUserPausedGame`, as disconnect ALWAYS pauses, 
+      // not same as `handleUserPausedGame`, as disconnect ALWAYS pauses,
       // this can UNPAUSE as well
     }
   });
@@ -72,29 +72,32 @@ constructor() {
 startUserInteraction(): void {
 
   // in this example, we are on a hypothetical screen with several "cards".
-  // as we move on the keyboard on gamepad, we want to highlight the next card,
+  // as we move on the keyboard or gamepad, we want to highlight the next card,
   // until eventually, we press A to select a card
 
   this.cardIndex = 0;
-  this.cards = [{}, {}, {}]; // example UI elements, most likely, 
+  this.cards = [{}, {}, {}]; // example UI elements, most likely,
   // that we are navigating with keyboard or controller
 
   this.currentControllerListener = this.controllerManager.addListener({
     onControllerInput: (input) => {
       // here is where you may want to interrupt if you did not get a chance
       // to either (1) remove or (2) deactivate the listener beforehand,
-      // such as could be the case with pausing the game (`handleUserPausedGame`)
+      // or as a safeguard in case the screen is inactive but listener
+      // was not removed (yet) for some reason.
       // example: if (this.suppressUserInteraction === true) {
       //            return;
       //          }
+      // note: this is not for pausing; see blocking listeners
+      // for handling pause (`handleUserPausedGame`)
 
       switch (input) {
         default:
           return;
         case OogyControllerInput.start:
           this.handleUserPausedGameToggled();
-          // here is our 3rd catch for pausing, 
-          // and why this library can be helpful instead of doing this all by hand
+          // here is our 3rd path to pausing the game so far,
+          // and why this library can be helpful instead of doing this by hand
           break;
         case OogyControllerInput.a:
           this.handleUserSelectedCard(this.cardIndex);
@@ -103,7 +106,7 @@ startUserInteraction(): void {
         case OogyControllerInput.right:
           this.highlightedCardIndex = this.highlightedCardIndex + 1;
           // go to the next index -> move one to the right
-          if (this.highlightedCardIndex >= this.cards.length) {
+          if (this.highlightedCardIndex > this.cards.length - 1) {
             this.highlightedCardIndex = 0; // wrap to start if already at end of list
           }
           break;
@@ -120,7 +123,7 @@ startUserInteraction(): void {
 stopUserInteraction(): void {
   this.controllerManager.removeListener(
     this.currentControllerListener
-  ); // this is all we need to do 
+  ); // this is all we need to do
   // (each listener has an automagically generated UUID)
 }
 ```
@@ -158,7 +161,7 @@ startNavigationBarBlockingListener(): void {
       }
 
       this.handleUserPausedGameToggled();
-      return true; 
+      return true;
       // return `true` to intercept, this is the guide or pause button
     }
 
