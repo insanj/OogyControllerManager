@@ -237,8 +237,10 @@ const keyboardBlockingListener = this.controllerManager.addListener({
 });
 ```
 
-<img width="45%" align="left" src="example/screenshot_browser.png">
-<img width="45%" align="right" src="example/screenshot_nodejs.png">
+<p align="center">
+<img width="45%" src="example/screenshot_browser.png">
+<img width="45%" src="example/screenshot_nodejs.png">
+</p>
 
 <h2>Authors</h2>
 
