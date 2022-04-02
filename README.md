@@ -25,7 +25,9 @@ Why? In this case, as a video game, we want to handle keyboard and controller in
 In browser, use:
 
 ```html
-<script src="oogy_controller_manager.js"></script>
+<script type="module">
+  import { OogyControllerManager } from "./OogyControllerManager.js";
+  // code goes here! see example/ for an example using index.html
 ```
 
 Once published, should be as simple as:
@@ -36,8 +38,10 @@ npm install -s oogy-controller-manager
 
 And using:
 
-```
-import { OogyControllerManager } from 'oogy-controller-manager';
+```ts
+import { OogyControllerManager } from "oogy-controller-manager";
+const controllerManager = new OogyControllerManager.OogyControllerManager();
+// see example/ for express/nodejs index.js usage
 ```
 
 <h2>Building</h2>
@@ -49,7 +53,7 @@ npm install
 npm start
 ```
 
-This will generate the latest production-ready `.js` file using webpack, located at `dist/oogy_controller_manager.js`.
+This will generate the latest production-ready `.js` file using Typescript, located at `dist/oogy_controller_manager.js`.
 
 To build with inline sourcemaps, use the `npm run dev` command. See `package.json` for details.
 
@@ -227,6 +231,9 @@ const keyboardBlockingListener = this.controllerManager.addListener({
   },
 });
 ```
+
+<img width="45%" align="left" src="example/screenshot_browser.png">
+<img width="45%" align="right" src="example/screenshot_nodejs.png">
 
 <h2>Authors</h2>
 
