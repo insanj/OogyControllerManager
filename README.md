@@ -22,15 +22,16 @@ Why? In this case, as a video game, we want to handle keyboard and controller in
 
 <h2>Installation</h2>
 
-In browser, use:
+In Browser, use:
 
 ```html
 <script type="module">
   import { OogyControllerManager } from "./OogyControllerManager.js";
   // code goes here! see example/ for an example using index.html
+</script>
 ```
 
-Once published, should be as simple as:
+In Node environment, use:
 
 ```bash
 npm install -s oogy-controller-manager
@@ -44,6 +45,10 @@ const controllerManager = new OogyControllerManager.OogyControllerManager();
 // see example/ for express/nodejs index.js usage
 ```
 
+<h4><a href="example/">See example/ for demonstrations of both browser and Node implementations.</a></h4>
+
+> NOTE: the Typescript `src/` is bundled with the package, in case the transpiled `.js` is not suitable for all use-cases.
+
 <h2>Building</h2>
 
 Clone the repository, and run:
@@ -53,9 +58,9 @@ npm install
 npm start
 ```
 
-This will generate the latest production-ready `.js` file using Typescript, located at `dist/oogy_controller_manager.js`.
+This will generate the latest production-ready `.js` file using Typescript, located at `dist/OogyControllerManager.js`.
 
-To build with inline sourcemaps, use the `npm run dev` command. See `package.json` for details.
+See `package.json` for details. Configure `tsconfig.json` to build with sourcemaps.
 
 <h2>Usage</h2>
 
