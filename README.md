@@ -27,6 +27,7 @@ In Browser, use:
 ```html
 <script type="module">
   import { OogyControllerManager } from "./OogyControllerManager.js";
+  const controllerManager = new OogyControllerManager.OogyControllerManager({ // ...
   // code goes here! see example/ for an example using index.html
 </script>
 ```
@@ -41,7 +42,7 @@ And using:
 
 ```ts
 import { OogyControllerManager } from "oogy-controller-manager";
-const controllerManager = new OogyControllerManager.OogyControllerManager();
+const controllerManager = new OogyControllerManager.OogyControllerManager({ // ...
 // see example/ for express/nodejs index.js usage
 ```
 
