@@ -1,5 +1,5 @@
 <p align="center">
-<img width="300" src="https://oogycanyouhelp.com/Store%20Desc%20Inline%20606px.png">
+<img width="300" src="https://user-images.githubusercontent.com/951011/166113826-daec02fd-f2a6-441d-b599-6b3812763b85.png">
 </p>
 
 <h1 align="center">OogyControllerManager</h1>
